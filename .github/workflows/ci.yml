@@ -38,14 +38,14 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set lowercase image name
-      run: echo "IMAGE_NAME=$(echo ghcr.io/${{ github.repository }} | tr '[:upper:] '[:lower:]')" >> $GITHUB_ENV
+      run: echo "IMAGE_NAME=$(echo ghcr.io/${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
     - name: Build Docker Image
       run: |
         docker build \
-        -t ghcr.io/${{ env.IMAGE_NAME }}:latest \
+        -t ${{ env.IMAGE_NAME }}:latest \
         .
 
     - name: Push Docker image
       run: |
-        docker push ghcr.io/${{ env.IMAGE_NAME }}:latest
+        docker ${{ env.IMAGE_NAME }}:latest
