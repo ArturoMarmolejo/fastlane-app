@@ -69,7 +69,3 @@ docker run -d --name cicd-homework -p 8111:8111 ghcr.io/arturomarmolejo/fastlane
 ### Application running as version 2.0.0 (after second pipeline run)
 
 ![App running version 2.0.0](screenshots/v2-running.png)
-
-### Second successful pipeline run (version 2.0 release)
-
-![Release version 2.0 pipeline succeeded](screenshots/v2-running.png)
